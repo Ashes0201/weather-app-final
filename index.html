@@ -11,6 +11,11 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -18,10 +23,14 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <h1>Torrance</h1>
+          <form class="example" action="action_page.php">
+            <input type="text" placeholder="Search city...." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          <h1 id="city"></h1>
           <ul>
-            <li>Monday 17:20</li>
-            <li>broken clouds</li>
+            <li id="day">Monday <span id="time">17:20</span></li>
+            <li id="description">broken clouds</li>
           </ul>
           <div class="row">
             <div class="col-6">
@@ -30,14 +39,14 @@
                   <img
                     src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                     alt="partly cloudy"
-                  />20°C | °F
+                  /><strong id="temperature"></strong>°C | °F
                 </li>
               </ul>
             </div>
             <div class="col-6">
               <ul>
-                <li>Humidity: 20%</li>
-                <li>Wind: 0 km/h</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
