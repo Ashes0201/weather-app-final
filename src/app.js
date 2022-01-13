@@ -24,22 +24,29 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
+  console.log(response);
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let temperatureElement = document.querySelector("#temperature");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "d702c598912f6b831e35edf8569da794";
-let city = "las vegas";
+let city = "paris";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
 axios.get(apiUrl).then(displayTemperature);
