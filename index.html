@@ -27,21 +27,25 @@
             <input type="text" placeholder="Search city...." name="search" />
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
-          <h1 id="city"></h1>
-          <ul>
-            <li id="date"></li>
-            <li id="description">broken clouds</li>
-          </ul>
+          <div class="top-section">
+            <h1 id="city"></h1>
+            <ul>
+              <li id="date"></li>
+              <li id="description"></li>
+            </ul>
+          </div>
           <div class="row">
             <div class="col-6">
-              <ul>
-                <li>
-                  <img id="icon" src="" alt="" /><strong
-                    id="temperature"
-                  ></strong
-                  >°C | °F
-                </li>
-              </ul>
+              <div class="weather-temperature">
+                <img id="icon" src="" alt="" class="left" />
+                <div class="left">
+                  <strong id="temperature"></strong
+                  ><span class="units"
+                    ><a href="#" id="fahrenheit-link" class="active">°F</a> |
+                    <a href="#" id="celsius-link">°C</a></span
+                  >
+                </div>
+              </div>
             </div>
             <div class="col-6">
               <ul>

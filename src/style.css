@@ -33,3 +33,22 @@ ul {
     rgba(233, 226, 226, 0.28) 90.1%
   );
 }
+
+.top-section {
+  margin-bottom: 30px;
+}
+
+.left {
+  float: left;
+}
+
+.weather-temperature strong {
+  font-size: 55px;
+  line-height: 1;
+  bottom: -25px;
+}
+
+.weather-temperature .units {
+  position: relative;
+  top: -25px;
+}
