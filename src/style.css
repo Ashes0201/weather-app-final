@@ -1,6 +1,6 @@
 body {
   font-family: monospace;
-  color: #5c5470;
+  color: #ffff;
 }
 
 h1 {
@@ -20,18 +20,13 @@ ul {
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
-  margin-right: 0;
 }
 
 .weather-app {
   border: 1px solid #000;
   border-radius: 5px;
   padding: 20px;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgba(216, 241, 230, 0.46) 0.1%,
-    rgba(233, 226, 226, 0.28) 90.1%
-  );
+  background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
 }
 
 .top-section {
@@ -43,12 +38,26 @@ ul {
 }
 
 .weather-temperature strong {
-  font-size: 55px;
+  font-size: 65px;
   line-height: 1;
   bottom: -25px;
+  position: relative;
+  top: -5px;
 }
-
-.weather-temperature .units {
+#icon {
   position: relative;
   top: -25px;
+}
+.weather-temperature .units {
+  position: relative;
+  top: -35px;
+}
+
+.footer {
+  color: #000;
+}
+
+.measurements {
+  font-size: 25px;
+  line-height: 28px;
 }
