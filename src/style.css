@@ -48,7 +48,7 @@ ul {
   position: relative;
   top: -25px;
 }
-.weather-temperature .units {
+.units {
   position: relative;
   top: -35px;
 }
@@ -60,4 +60,9 @@ ul {
 .measurements {
   font-size: 25px;
   line-height: 28px;
+}
+
+.weather-temperature .active {
+  color: #ffff;
+  cursor: default;
 }
