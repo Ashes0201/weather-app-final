@@ -19,6 +19,7 @@ ul {
 
 .weather-app-wrapper {
   max-width: 600px;
+
   margin: 30px auto;
 }
 
@@ -46,7 +47,7 @@ ul {
 }
 #icon {
   position: relative;
-  top: -25px;
+  top: -23px;
 }
 .units {
   position: relative;
@@ -65,4 +66,24 @@ ul {
 .weather-temperature .active {
   color: #ffff;
   cursor: default;
+}
+.forecast {
+  text-align: center;
+  background: hsl(56, 100%, 83%);
+  border-radius: 5px;
+  color: #72306d;
+  margin-bottom: 5px;
+}
+.forecast-day {
+  font-size: 18px;
+}
+.forecast-units {
+  font-size: 14px;
+}
+.forecast-icon {
+  font-size: 30px;
+}
+
+.general-info {
+  font-size: 20px;
 }
