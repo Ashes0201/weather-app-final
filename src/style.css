@@ -70,14 +70,11 @@ ul {
 
 .forecast-data {
   text-align: center;
-  background: #faffc9;
+  background: #f7fdb5;
   color: #75326f;
   border-radius: 5px;
 }
 
-#forecast-icon {
-  font-size: 30px;
-}
 .forecast-min {
   color: #d38fb8;
   font-size: 14px;
