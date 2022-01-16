@@ -23,6 +23,12 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "d702c598912f6b831e35edf8569da794";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -44,6 +50,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -58,24 +66,8 @@ function handleSearch(event) {
   search(cityInput.value);
 }
 
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -87,7 +79,7 @@ function displayForecast() {
                 <div class="forecast-data">
                   ${day}
                   <div id="forecast-icon">⛅️</div>
-                  64° 48°
+                 <span class="forecast-max">64°</span> <span class="forecast-min">48°</span>
                 </div>
               </div>
             `;
@@ -95,16 +87,6 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-let fahrenheitTemperature = null;
-
-displayForecast();
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let searchForm = document.querySelector("#form-search");
 searchForm.addEventListener("submit", handleSearch);
