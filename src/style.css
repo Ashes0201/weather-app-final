@@ -67,23 +67,18 @@ ul {
   color: #ffff;
   cursor: default;
 }
-.forecast {
-  text-align: center;
-  background: hsl(56, 100%, 83%);
-  border-radius: 5px;
-  color: #72306d;
-  margin-bottom: 5px;
-}
-.forecast-day {
-  font-size: 18px;
-}
-.forecast-units {
-  font-size: 14px;
-}
-.forecast-icon {
-  font-size: 30px;
-}
 
 .general-info {
   font-size: 20px;
+}
+
+.forecast-data {
+  text-align: center;
+  background: #faffc9;
+  color: #75326f;
+  border-radius: 5px;
+}
+
+#forecast-icon {
+  font-size: 30px;
 }
