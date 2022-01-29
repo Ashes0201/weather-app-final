@@ -1,6 +1,6 @@
 body {
   font-family: monospace;
-  color: #ffff;
+  color: #735e8f;
 }
 
 h1 {
@@ -27,7 +27,7 @@ ul {
   border: 1px solid #000;
   border-radius: 5px;
   padding: 20px;
-  background: linear-gradient(to right, rgb(173, 83, 137), rgb(60, 16, 83));
+  background: #dbc3fa;
 }
 
 .top-section {
@@ -70,13 +70,13 @@ ul {
 
 .forecast-data {
   text-align: center;
-  background: #f7fdb5;
-  color: #75326f;
+  background: #735e8f;
+  color: #dbc3fa;
   border-radius: 5px;
 }
 
 .forecast-min {
-  color: #d38fb8;
+  color: #bba6b2;
   font-size: 14px;
 }
 .forecast-max {
